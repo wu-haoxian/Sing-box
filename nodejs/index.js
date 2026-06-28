@@ -12,7 +12,7 @@ const { spawn, execSync } = require('child_process');
 const PORT = process.env.PORT || 3000;           // http 服务
 const SUB_PATH = process.env.SUB_PATH || 'sub';  // 节点订阅token
 const config = {
-  UUID: process.env.UUID || 'a29738e5-bee1-c0fc-b484-ae7c49cbc828',  // 节点UUID，使用哪吒v1时在不不同的平台部署需要修改，否则agent会覆盖
+  UUID: process.env.UUID || 'c35bbaff-6a5e-4060-a146-78d280d081ff',  // 节点UUID，使用哪吒v1时在不不同的平台部署需要修改，否则agent会覆盖
   NEZHA_SERVER: process.env.NEZHA_SERVER || '',       // 哪吒面板地址，v1格式: nezha.xxx.com:8008  v0格式： nezha.xxx.com
   NEZHA_PORT: process.env.NEZHA_PORT || '',           // 哪吒v1请留空，哪吒v0 agent端口
   NEZHA_KEY: process.env.NEZHA_KEY || '',             // 哪吒v1的NZ_CLIENT_SECRET或哪吒v0-agent密钥
@@ -23,10 +23,10 @@ const config = {
   CFPORT: process.env.CFPORT || '443',                // 优选域名或优选ip对应端口
   NAME: process.env.NAME || '',                       // 节点备注
   S5_PORT: process.env.S5_PORT || '',                 // socks5端口,支持多端口玩具可填写，否则不动
-  HY2_PORT: process.env.HY2_PORT || '',               // Hy2 端口，支持多端口玩具可填写，否则不动
+  HY2_PORT: process.env.HY2_PORT || '20306',               // Hy2 端口，支持多端口玩具可填写，否则不动
   TUIC_PORT: process.env.TUIC_PORT || '',             // Tuic 端口，支持多端口玩具可填写，否则不动 
   ANYTLS_PORT: process.env.ANYTLS_PORT || '',         // AnyTLS 端口,支持多端口玩具可填写，否则不动
-  REALITY_PORT: process.env.REALITY_PORT || '',       // Reality 端口,支持多端口玩具可填写，否则不动  
+  REALITY_PORT: process.env.REALITY_PORT || '20306',       // Reality 端口,支持多端口玩具可填写，否则不动  
   ANYREALITY_PORT: process.env.ANYREALITY_PORT || '', // Any Reality 端口,支持多端口玩具可填写，否则不动
   CHAT_ID: process.env.CHAT_ID || '',                 // TG chat_id，可在https://t.me/laowang_serv00_bot 获取
   BOT_TOKEN: process.env.BOT_TOKEN || '',             // TG bot_token, 使用自己的bot需要填写,使用上方的bot不用填写,不会给别人发送
