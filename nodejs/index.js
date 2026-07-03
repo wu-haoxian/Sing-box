@@ -20,14 +20,14 @@ const UUID = process.env.UUID || 'e31c5550-0937-4b34-aed2-82f099cc140d';  // 在
 const NEZHA_SERVER = process.env.NEZHA_SERVER || '';         // 哪吒面板地址,v1形式：nz.serv00.net:8008  v0形式：nz.serv00.net
 const NEZHA_PORT = process.env.NEZHA_PORT || '';             // v1哪吒请留空，v0 agent端口，当端口为{443,8443,2087,2083,2053,2096}时，自动开启tls
 const NEZHA_KEY = process.env.NEZHA_KEY || '';               // v1的NZ_CLIENT_SECRET或v0 agwnt密钥 
-const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'host.lio.dpdns.org';           // argo固定隧道域名,留空即使用临时隧道
-const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiMTI4NjMxYWM0Nzg2ODI3MTk1MmFkYjllOTQ3YWQ2YTMiLCJ0IjoiMGIyMzIyOTUtMmRmNi00ZjVhLWFjZDAtZjM0NjNlZWJjYjE2IiwicyI6Ik9HVXhNR1ZtTXpJdE0ySXlZaTAwWlRFMUxUZ3haRFl0T0RBeE5tSmlZMkkwTVRsbCJ9';               // argo固定隧道token或json,留空即使用临时隧道
-const ARGO_PORT = process.env.ARGO_PORT || 35353;             // argo固定隧道端口,使用token需在cloudflare控制台设置和这里一致，否则节点不通
+const ARGO_DOMAIN = process.env.ARGO_DOMAIN || '';           // argo固定隧道域名,留空即使用临时隧道
+const ARGO_AUTH = process.env.ARGO_AUTH || '';               // argo固定隧道token或json,留空即使用临时隧道
+const ARGO_PORT = process.env.ARGO_PORT || 8001;             // argo固定隧道端口,使用token需在cloudflare控制台设置和这里一致，否则节点不通
 const S5_PORT = process.env.S5_PORT || '';                   // socks5端口，支持多端口的可以填写，否则留空
 const TUIC_PORT = process.env.TUIC_PORT || '';               // tuic端口，支持多端口的可以填写，否则留空
-const HY2_PORT = process.env.HY2_PORT || '27580';                 // hy2端口，支持多端口的可以填写，否则留空
+const HY2_PORT = process.env.HY2_PORT || '';                 // hy2端口，支持多端口的可以填写，否则留空
 const ANYTLS_PORT = process.env.ANYTLS_PORT || '';           // AnyTLS端口，支持多端口的可以填写，否则留空
-const REALITY_PORT = process.env.REALITY_PORT || '27580';         // reality端口，支持多端口的可以填写，否则留空
+const REALITY_PORT = process.env.REALITY_PORT || '';         // reality端口，支持多端口的可以填写，否则留空
 const ANYREALITY_PORT = process.env.ANYREALITY_PORT || '';   // Anyr-eality端口，支持多端口的可以填写，否则留空
 const CFIP = process.env.CFIP || 'saas.sin.fan';             // 优选域名或优选IP
 const CFPORT = process.env.CFPORT || 443;                    // 优选域名或优选IP对应端口
@@ -566,7 +566,8 @@ eQ6OFb9LbLYL9f+sAiAffoMbi4y/0YUSlTtz7as9S8/lciBF5VCUoVIKS+vX2g==
           "listen_port": parseInt(TUIC_PORT),
           "users": [
             {
-              "uuid": UUID
+              "uuid": UUID,
+              "password": UUID
             }
           ],
           "congestion_control": "bbr",
